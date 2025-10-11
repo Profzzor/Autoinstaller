@@ -70,6 +70,14 @@ bind c new-window -c '#{pane_current_path}'
 # set -g mouse on
 
 set -g history-limit 5000
+
+setw -g mode-keys vi
+bind -T copy-mode-vi v send -X begin-selection
+bind -T copy-mode-vi C-v send -X rectangle-toggle
+bind -T copy-mode-vi y send -X copy-pipe-and-cancel "xclip -selection clipboard -in"
+bind -T copy-mode-vi Escape send -X cancel
+
+bind | split-window -h
 """
     
     config_dir = Path.home() / ".config" / "tmux"
