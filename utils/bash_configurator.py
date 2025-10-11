@@ -1,3 +1,4 @@
+# Save this file as bash_configurator.py
 import os
 import shutil
 from pathlib import Path
@@ -58,6 +59,12 @@ fi
     if 'bind "set completion-ignore-case on"' not in current_content:
         lines_to_append.append("\n# Enable case-insensitive tab completion\n")
         lines_to_append.append('bind "set completion-ignore-case on"\n')
+        
+    # --- ADD FZF INTEGRATION ---
+    fzf_bash_line = 'eval "$(fzf --bash)"'
+    if fzf_bash_line not in current_content:
+        lines_to_append.append("\n# FZF integration for shell history search (CTRL+R)\n")
+        lines_to_append.append(fzf_bash_line + '\n')
 
     # --- Final Write Operation ---
     final_content = "".join(lines) + "".join(lines_to_append)
