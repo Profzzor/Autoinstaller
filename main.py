@@ -6,11 +6,11 @@ import shutil
 import tempfile
 
 # All modules from the 'utils' package.
-import utils.bash_configurator utils.zsh_configurator utils.alias_manager utils.ghidra_installer
-import utils.vscode_installer utils.fzf_installer utils.tmux_installer utils.john_installer
-import utils.hashcat_installer utils.uv_tools_installer utils.nmap_installer utils.rlwrap_installer
-import utils.sqlmap_installer utils.docker_installer utils.service_manager utils.proxychains_installer
-import utils.command_runner utils.xclip_installer
+import utils.bash_configurator, utils.zsh_configurator, utils.alias_manager, utils.ghidra_installer
+import utils.vscode_installer, utils.fzf_installer, utils.tmux_installer, utils.john_installer
+import utils.hashcat_installer, utils.uv_tools_installer, utils.nmap_installer, utils.rlwrap_installer
+import utils.sqlmap_installer, utils.docker_installer, utils.service_manager, utils.proxychains_installer
+import utils.command_runner, utils.xclip_installer
 
 # --- SCRIPT CONFIGURATION ---
 # Final update with all dependencies
