@@ -63,7 +63,7 @@ def install():
     config_content = """
 # Unbind the default prefix and Set new prefix to Ctrl+z
 unbind C-b
-set-option -g prefix C-z
+set-option -g prefix C-x
 
 bind c new-window -c '#{pane_current_path}'
 
