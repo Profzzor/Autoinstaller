@@ -48,6 +48,7 @@ PACKAGE_MAP = {
             "libx11", "libxmu", "libxext"
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
+}
 
 # (All other functions remain unchanged)
 def ensure_pip_is_available():
