@@ -1,3 +1,4 @@
+# Save this file as uv_tools_installer.py
 import sys
 import shutil
 import subprocess
@@ -51,6 +52,12 @@ UV_TOOLS = [
         "check_name": "secretsdump.py",
         "display_name": "Impacket Suite",
         "url": "https://github.com/fortra/impacket",
+        "extra": None
+    },
+    {
+        "check_name": "oleid",
+        "display_name": "Ole Tools",
+        "url": "https://github.com/decalage2/oletools",
         "extra": None
     }
 ]
