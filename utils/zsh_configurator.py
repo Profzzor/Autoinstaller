@@ -1,3 +1,4 @@
+# Save this file as zsh_configurator.py
 import os
 import shutil
 from pathlib import Path
@@ -56,7 +57,13 @@ fi
     if "zstyle ':completion:*' matcher-list" not in current_content:
         lines_to_append.append("\n# Enable case-insensitive tab completion\n")
         lines_to_append.append("zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'\n")
-
+		
+		# --- ADD FZF INTEGRATION ---
+    fzf_zsh_line = 'source <(fzf --zsh)'
+    if fzf_zsh_line not in current_content:
+        lines_to_append.append("\n# FZF integration for shell history search (CTRL+R)\n")
+        lines_to_append.append(fzf_zsh_line + '\n')
+        
     # --- Final Write Operation ---
     final_content = "".join(lines) + "".join(lines_to_append)
     
