@@ -6,23 +6,11 @@ import shutil
 import tempfile
 
 # All modules from the 'utils' package.
-import utils.bash_configurator
-import utils.zsh_configurator
-import utils.alias_manager
-import utils.ghidra_installer
-import utils.vscode_installer
-import utils.fzf_installer
-import utils.tmux_installer
-import utils.john_installer
-import utils.hashcat_installer
-import utils.uv_tools_installer
-import utils.nmap_installer
-import utils.rlwrap_installer
-import utils.sqlmap_installer
-import utils.docker_installer
-import utils.service_manager
-import utils.proxychains_installer
-import utils.command_runner
+import utils.bash_configurator utils.zsh_configurator utils.alias_manager utils.ghidra_installer
+import utils.vscode_installer utils.fzf_installer utils.tmux_installer utils.john_installer
+import utils.hashcat_installer utils.uv_tools_installer utils.nmap_installer utils.rlwrap_installer
+import utils.sqlmap_installer utils.docker_installer utils.service_manager utils.proxychains_installer
+import utils.command_runner utils.xclip_installer
 
 # --- SCRIPT CONFIGURATION ---
 # Final update with all dependencies
@@ -31,14 +19,12 @@ PACKAGE_MAP = {
         "manager": "apt",
         "packages": [
             "build-essential", "default-jdk", "golang", "curl", "git", "unzip", "gpg", "python3-dev",
-            "libevent-dev", "ncurses-dev", "automake", "bison", "pkg-config", # tmux
-            "libssl-dev", # John the Ripper
-            "p7zip-full", "ocl-icd-opencl-dev", "libgmp-dev", "libxxhash-dev", # Hashcat
-            "libpcap-dev", "libssh2-1-dev", # Nmap
-            "libreadline-dev", "autoconf", "libptytty-dev", # rlwrap
-            "docker.io", "docker-compose", # Docker
-            "default-mysql-server", "sqlite3", "php", "apache2", # Web Stack
-            "openvpn", "krb5-user", "libkrb5-dev" # Networking & Kerberos
+            "libevent-dev", "ncurses-dev", "automake", "bison", "pkg-config", "libssl-dev",
+            "p7zip-full", "ocl-icd-opencl-dev", "libgmp-dev", "libxxhash-dev", "libpcap-dev",
+            "libssh2-1-dev", "libreadline-dev", "autoconf", "libptytty-dev", "docker.io",
+            "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2",
+            "openvpn", "krb5-user", "libkrb5-dev", "wget",
+            "libx11-dev", "libxmu-dev", "libxext-dev"
         ],
         "update_cmd": ["apt", "update"]
     },
@@ -49,7 +35,8 @@ PACKAGE_MAP = {
             "libevent-devel", "ncurses-devel", "automake", "bison", "pkgconf-pkg-config", "openssl-devel", "p7zip",
             "ocl-icd-devel", "gmp-devel", "xxhash-devel", "libpcap-devel", "libssh2-devel", "readline-devel", "autoconf",
             "libptytty-devel", "docker", "docker-compose", "mariadb-server", "sqlite", "php", "openvpn",
-            "krb5-workstation", "krb5-devel"
+            "krb5-workstation", "krb5-devel", "wget",
+            "libX11-devel", "libXmu-devel", "libXext-devel"
         ], "update_cmd": []
     },
     "arch": {
@@ -57,10 +44,10 @@ PACKAGE_MAP = {
         "packages": [
             "base-devel", "jdk-openjdk", "go", "curl", "git", "unzip", "gnupg", "libevent", "ncurses", "automake", "bison",
             "pkg-config", "openssl", "p7zip", "opencl-icd-loader", "gmp", "xxhash", "libpcap", "libssh2", "readline",
-            "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5"
+            "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
+            "libx11", "libxmu", "libxext"
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
-}
 
 # (All other functions remain unchanged)
 def ensure_pip_is_available():
@@ -170,6 +157,7 @@ if __name__ == "__main__":
     install_ffuf()
     utils.fzf_installer.install()
     utils.tmux_installer.install()
+    utils.xclip_installer.install()
     utils.ghidra_installer.install()
     utils.john_installer.install()
     utils.hashcat_installer.install()
