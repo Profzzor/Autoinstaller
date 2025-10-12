@@ -8,7 +8,7 @@ from pathlib import Path
 #
 # "name": A friendly name for logging.
 # "check_path" OR "check_command": 
-#   - Use "check_path" to see if a file/directory exists (e.g., "~/tools/SecLists-master").
+#   - Use "check_path" to see if a file/directory exists (e.g., "/opt/SecLists-master").
 #   - Use "check_command" to see if a command is in the PATH (e.g., "cargo").
 # "command": The full shell command to execute.
 # "cwd": (Optional) The directory to run the command in. Defaults to the user's tools directory.
@@ -26,7 +26,13 @@ COMMANDS_TO_RUN = [
         "name": "SecLists Wordlists",
         "check_path": TOOLS_DIR / "SecLists-master",
         "command": "sudo sh -c 'wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecLists.zip && unzip -q SecLists.zip && rm -f SecLists.zip'",
-        "cwd": str(TOOLS_DIR) # Run this inside the ~/tools directory
+        "cwd": str(TOOLS_DIR) # Run this inside the /opt directory
+    },
+    {
+        "name": "Responder Install",
+        "check_path": TOOLS_DIR / "Responder",
+        "command": "sudo sh -c 'git clone --depth 1 https://github.com/lgandx/Responder.git'",
+        "cwd": str(TOOLS_DIR) # Run this inside the /opt directory
     },
     # You can add more commands here in the future
     # {
