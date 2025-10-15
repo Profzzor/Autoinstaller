@@ -22,8 +22,8 @@ PACKAGE_MAP = {
             "libevent-dev", "ncurses-dev", "automake", "bison", "pkg-config", "libssl-dev",
             "p7zip-full", "ocl-icd-opencl-dev", "libgmp-dev", "libxxhash-dev", "libpcap-dev",
             "libssh2-1-dev", "libreadline-dev", "autoconf", "libptytty-dev", "docker.io",
-            "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2",
-            "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim"
+            "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
+            "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "android-tools-adb", "binutils",
             "libx11-dev", "libxmu-dev", "libxext-dev"
         ],
         "update_cmd": ["apt", "update"]
@@ -35,7 +35,7 @@ PACKAGE_MAP = {
             "libevent-devel", "ncurses-devel", "automake", "bison", "pkgconf-pkg-config", "openssl-devel", "p7zip",
             "ocl-icd-devel", "gmp-devel", "xxhash-devel", "libpcap-devel", "libssh2-devel", "readline-devel", "autoconf",
             "libptytty-devel", "docker", "docker-compose", "mariadb-server", "sqlite", "php", "openvpn",
-            "krb5-workstation", "krb5-devel", "wget", "vim"
+            "krb5-workstation", "krb5-devel", "wget", "vim", "android-tools", "binutils", "gdb",
             "libX11-devel", "libXmu-devel", "libXext-devel"
         ], "update_cmd": []
     },
@@ -45,7 +45,7 @@ PACKAGE_MAP = {
             "base-devel", "jdk-openjdk", "go", "curl", "git", "unzip", "gnupg", "libevent", "ncurses", "automake", "bison",
             "pkg-config", "openssl", "p7zip", "opencl-icd-loader", "gmp", "xxhash", "libpcap", "libssh2", "readline",
             "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
-            "libx11", "libxmu", "libxext", "vim"
+            "libx11", "libxmu", "libxext", "vim", "android-tools", "binutils", "gdb",
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
 }
