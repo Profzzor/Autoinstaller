@@ -34,6 +34,12 @@ COMMANDS_TO_RUN = [
         "command": "sudo sh -c 'git clone --depth 1 https://github.com/lgandx/Responder.git'",
         "cwd": str(TOOLS_DIR) # Run this inside the /opt directory
     },
+    {
+        "name": "RustHound",
+        "check_command": "rusthound",
+        "command": "cd /tmp && git clone --depth 1 https://github.com/NH-RED-TEAM/RustHound.git && cd RustHound && make install",
+        "cwd": None # This command doesn't need a specific directory
+    },
     # You can add more commands here in the future
     # {
     #     "name": "Another Tool",
