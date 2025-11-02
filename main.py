@@ -24,7 +24,7 @@ PACKAGE_MAP = {
             "libssh2-1-dev", "libreadline-dev", "autoconf", "libptytty-dev", "docker.io",
             "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
             "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "android-tools-adb", "binutils",
-            "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby"
+            "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby", "ruby-dev"
         ],
         "update_cmd": ["apt", "update"]
     },
@@ -36,7 +36,7 @@ PACKAGE_MAP = {
             "ocl-icd-devel", "gmp-devel", "xxhash-devel", "libpcap-devel", "libssh2-devel", "readline-devel", "autoconf",
             "libptytty-devel", "docker", "docker-compose", "mariadb-server", "sqlite", "php", "openvpn",
             "krb5-workstation", "krb5-devel", "wget", "vim", "android-tools", "binutils", "gdb",
-            "libX11-devel", "libXmu-devel", "libXext-devel", "openldap-clients", "ruby"
+            "libX11-devel", "libXmu-devel", "libXext-devel", "openldap-clients", "ruby", "ruby-dev"
         ], "update_cmd": []
     },
     "arch": {
@@ -46,7 +46,7 @@ PACKAGE_MAP = {
             "pkg-config", "openssl", "p7zip", "opencl-icd-loader", "gmp", "xxhash", "libpcap", "libssh2", "readline",
             "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
             "libx11", "libxmu", "libxext", "vim", "android-tools", "binutils", "gdb", "openldap",
-            "ruby"
+            "ruby", "ruby-dev"
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
 }
