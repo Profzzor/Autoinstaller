@@ -40,6 +40,12 @@ COMMANDS_TO_RUN = [
         "command": "cd /tmp && git clone --depth 1 https://github.com/NH-RED-TEAM/RustHound.git && cd RustHound && make install",
         "cwd": None # This command doesn't need a specific directory
     },
+    {
+        "name": "Wpscan",
+        "check_command": "wpscan",
+        "command": "sudo sh -c 'gem install wpscan'",
+        "cwd": None # This command doesn't need a specific directory
+    },
     # You can add more commands here in the future
     # {
     #     "name": "Another Tool",
