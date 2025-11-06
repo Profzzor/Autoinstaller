@@ -46,6 +46,12 @@ COMMANDS_TO_RUN = [
         "command": "sudo sh -c 'gem install wpscan'",
         "cwd": None # This command doesn't need a specific directory
     },
+    {
+        "name": "Metasploit",
+        "check_command": "msfvenom",
+        "command": "curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall",
+        "cwd": None # This command doesn't need a specific directory
+    },
     # You can add more commands here in the future
     # {
     #     "name": "Another Tool",
