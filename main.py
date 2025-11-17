@@ -25,7 +25,7 @@ PACKAGE_MAP = {
             "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
             "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "android-tools-adb", "binutils",
             "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby", "ruby-dev", "wireshark",
-            "tshark"
+            "tshark", "jq", "faketime"
         ],
         "update_cmd": ["apt", "update"]
     },
@@ -38,7 +38,7 @@ PACKAGE_MAP = {
             "libptytty-devel", "docker", "docker-compose", "mariadb-server", "sqlite", "php", "openvpn",
             "krb5-workstation", "krb5-devel", "wget", "vim", "android-tools", "binutils", "gdb",
             "libX11-devel", "libXmu-devel", "libXext-devel", "openldap-clients", "ruby", "ruby-dev",
-            "wireshark-qt", "wireshark-cli"
+            "wireshark-qt", "wireshark-cli", "jq", "faketime"
         ], "update_cmd": []
     },
     "arch": {
@@ -48,7 +48,7 @@ PACKAGE_MAP = {
             "pkg-config", "openssl", "p7zip", "opencl-icd-loader", "gmp", "xxhash", "libpcap", "libssh2", "readline",
             "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
             "libx11", "libxmu", "libxext", "vim", "android-tools", "binutils", "gdb", "openldap",
-            "ruby", "ruby-dev", "wireshark-qt", "wireshark-cli"
+            "ruby", "ruby-dev", "wireshark-qt", "wireshark-cli", "jq", "faketime"
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
 }
