@@ -52,6 +52,12 @@ COMMANDS_TO_RUN = [
         "command": "curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall",
         "cwd": None # This command doesn't need a specific directory
     },
+    {
+        "name": "Brave Browser",
+        "check_command": "brave",
+        "command": "curl -fsS https://dl.brave.com/install.sh | sh",
+        "cwd": None # This command doesn't need a specific directory
+    },
     # You can add more commands here in the future
     # {
     #     "name": "Another Tool",
