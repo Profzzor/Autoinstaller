@@ -1,3 +1,4 @@
+# Save this file as ghidra_installer.py
 import os
 import shutil
 import platform
@@ -14,7 +15,7 @@ def install():
 
     # Define installation directory in /opt and symlink in user's home
     install_dir = Path("/opt/ghidra")
-    local_bin = Path.home() / ".local" / "bin"
+    local_bin = "usr" / "local" / "bin"
     symlink_path = local_bin / "ghidra"
 
     # 1. Check if Ghidra seems to be already installed
