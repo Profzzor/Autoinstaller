@@ -48,7 +48,7 @@ PACKAGE_MAP = {
             "pkg-config", "openssl", "p7zip", "opencl-icd-loader", "gmp", "xxhash", "libpcap", "libssh2", "readline",
             "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
             "libx11", "libxmu", "libxext", "vim", "android-tools", "binutils", "gdb", "openldap",
-            "ruby", "ruby-dev", "wireshark-qt", "wireshark-cli", "jq", "faketime", "mingw-w64-gcc"
+            "ruby", "ruby", "wireshark-qt", "wireshark-cli", "jq", "mingw-w64-gcc"
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
 }
