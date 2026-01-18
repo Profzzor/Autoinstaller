@@ -25,7 +25,7 @@ PACKAGE_MAP = {
             "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
             "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "android-tools-adb", "binutils",
             "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby", "ruby-dev", "wireshark",
-            "tshark", "jq", "faketime", "mingw-w64", "gh"
+            "tshark", "jq", "faketime", "mingw-w64", "gh", "net-snmp", "perl-image-exiftool",
         ],
         "update_cmd": ["apt", "update"]
     },
@@ -38,7 +38,7 @@ PACKAGE_MAP = {
             "libptytty-devel", "docker", "docker-compose", "mariadb-server", "sqlite", "php", "openvpn",
             "krb5-workstation", "krb5-devel", "wget", "vim", "android-tools", "binutils", "gdb", "gh",
             "libX11-devel", "libXmu-devel", "libXext-devel", "openldap-clients", "ruby", "ruby-dev",
-            "wireshark-qt", "wireshark-cli", "jq", "faketime", "mingw64-gcc"
+            "wireshark-qt", "wireshark-cli", "jq", "faketime", "mingw64-gcc", "net-snmp", "perl-Image-ExifTool",
         ], "update_cmd": []
     },
     "arch": {
@@ -49,6 +49,7 @@ PACKAGE_MAP = {
             "libptytty", "docker", "docker-compose", "mariadb", "sqlite", "php", "openvpn", "krb5", "wget",
             "libx11", "libxmu", "libxext", "vim", "android-tools", "binutils", "gdb", "openldap", "github-cli",
             "ruby", "wireshark-qt", "wireshark-cli", "jq", "mingw-w64-gcc", "code", "clang", "llvm",
+            "net-snmp", "perl-image-exiftool",
         ], "update_cmd": ["pacman", "-Syu", "--noconfirm"]
     },
 }
