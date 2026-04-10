@@ -1,0 +1,44 @@
+[window]
+opacity = 0.9
+blur = true
+padding = { x = 10, y = 10 }
+startup_mode = "Maximized"
+decorations = "Full"
+
+[general]
+import = ["~/.cache/wal/colors-alacritty.toml"]
+
+[font]
+size = 13.0
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = "Underline"
+unfocused_hollow = false
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
