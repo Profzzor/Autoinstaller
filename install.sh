@@ -65,7 +65,10 @@ fi
 EOF
 
 cat > ~/.xinitrc <<'EOF'
+#!/bin/sh
+eval "$(dbus-launch --sh-syntax --exit-with-session)"
 export QT_QPA_PLATFORMTHEME=qt5ct
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 exec /usr/bin/i3
 EOF
 
