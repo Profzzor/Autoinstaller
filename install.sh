@@ -1,15 +1,17 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
+set -euo pipefail
 
-sudo apt install -y meson ninja-build pkg-config x11proto-dev xorg-dev x11proto-randr-dev xtrans-dev libpixman-1-dev libxkbcommon-x11-dev libxfont-dev libxcvt-dev 
-sudo apt install -y libdrm-dev libepoxy-dev x11proto-present-dev libxkbfile-dev libudev-dev libxshmfence-dev libbsd-dev x11proto-xf86dri-dev libgl1-mesa-dev libglu1-mesa-dev
-sudo apt install -y libgl-dev xutils-dev mesa-common-dev libgbm-dev libxcb-shape0-dev libxcb-util-dev libxcb-icccm4-dev autoconf automake libtool libinput-dev libx11-dev 
-sudo apt install -y cmake libxau-dev libxext-dev libxinerama-dev libxv-dev libxrender-dev libxdmcp-dev libxcb1-dev libxshmfence-dev libpixman-1-dev libbsd-dev xbitmaps 
-sudo apt install -y xkb-data libxfont-dev x11-xkb-utils mesa-utils libgl1-mesa-dri libgbm-dev open-vm-tools open-vm-tools-desktop fonts-font-awesome
-sudo apt install -y git i3-wm i3blocks xinit xterm x11-xserver-utils vim alacritty libkrb5-dev python3-dev thunar python3-pip feh imagemagick picom rofi
+sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt remove -y vim-tiny && sudo ln -sf /usr/bin/vim /usr/bin/vi
+sudo apt-get install -y meson ninja-build pkg-config x11proto-dev xorg-dev x11proto-randr-dev xtrans-dev libpixman-1-dev libxkbcommon-x11-dev libxfont-dev libxcvt-dev 
+sudo apt-get install -y libdrm-dev libepoxy-dev x11proto-present-dev libxkbfile-dev libudev-dev libxshmfence-dev libbsd-dev x11proto-xf86dri-dev libgl1-mesa-dev libglu1-mesa-dev
+sudo apt-get install -y libgl-dev xutils-dev mesa-common-dev libgbm-dev libxcb-shape0-dev libxcb-util-dev libxcb-icccm4-dev autoconf automake libtool libinput-dev libx11-dev 
+sudo apt-get install -y cmake libxau-dev libxext-dev libxinerama-dev libxv-dev libxrender-dev libxdmcp-dev libxcb1-dev libxshmfence-dev libpixman-1-dev libbsd-dev xbitmaps 
+sudo apt-get install -y xkb-data libxfont-dev x11-xkb-utils mesa-utils libgl1-mesa-dri libgbm-dev open-vm-tools open-vm-tools-desktop fonts-font-awesome
+sudo apt-get install -y git i3-wm i3blocks xinit xterm x11-xserver-utils vim alacritty libkrb5-dev python3-dev thunar python3-pip feh imagemagick picom rofi
+
+sudo apt-get remove -y vim-tiny && sudo ln -sf /usr/bin/vim /usr/bin/vi
 
 cd /tmp && git clone --depth 1 https://github.com/X11Libre/xserver.git && cd xserver
 
@@ -75,7 +77,7 @@ cp config/picom.conf ~/.config/picom/
 mkdir -p ~/.config/alacritty/
 cp config/alacritty.toml ~/.config/alacritty/
 
-pip install pywal --bre
+pip install pywal --break-system-packages
 
 mkdir -p ~/.config/wal
 cat > ~/.config/wal/config << 'EOF' 
@@ -86,8 +88,6 @@ EOF
 
 mkdir -p ~/Pictures/
 cp overgrown-green-staircase-forest.jpg ~/Pictures/
-
-XDG_SESSION_TYPE=x11 wal -i ~/Pictures/overgrown-green-staircase-forest.jpg
 
 mkdir -p ~/.config/i3
 cp config/config ~/.config/i3/
@@ -100,8 +100,18 @@ cp config/config.rasi ~/.config/rofi/
 fc-cache -fv
 
 # Clean up
-cd /tmp && rm -rf xf86-input-keyboard/ xf86-input-libinput/ xf86-input-vmmouse/ xserver/ i3blocks-contrib/
+cd /tmp && sudo rm -rf xf86-input-keyboard/ xf86-input-libinput/ xf86-input-vmmouse/ xserver/ i3blocks-contrib/
 
 sudo apt autoremove -y
+
+echo
+echo "===================================================="
+echo "AFTER REBOOT, RUN THIS COMMAND:"
+echo
+echo "XDG_SESSION_TYPE=x11 wal -i ~/Pictures/overgrown-green-staircase-forest.jpg"
+echo "===================================================="
+echo
+
+sleep 5
 
 sudo reboot
