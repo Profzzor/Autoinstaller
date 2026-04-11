@@ -228,5 +228,7 @@ client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
+bindsym Print exec flameshot gui
+
 bindsym $mod+Shift+p exec systemctl poweroff
 bindsym $mod+Shift+Ctrl+p exec systemctl reboot
