@@ -10,7 +10,7 @@ sudo apt-get install -y libgl-dev xutils-dev mesa-common-dev libgbm-dev libxcb-s
 sudo apt-get install -y cmake libxau-dev libxext-dev libxinerama-dev libxv-dev libxrender-dev libxdmcp-dev libxcb1-dev libxshmfence-dev libpixman-1-dev libbsd-dev xbitmaps 
 sudo apt-get install -y xkb-data libxfont-dev x11-xkb-utils mesa-utils libgl1-mesa-dri libgbm-dev open-vm-tools open-vm-tools-desktop fonts-font-awesome 
 sudo apt-get install -y git i3-wm i3blocks xinit xterm x11-xserver-utils vim alacritty libkrb5-dev python3-dev thunar python3-pip feh imagemagick picom rofi
-sudo apt-get install -y lxappearance qt5ct qt6ct arc-theme adwaita-icon-theme papirus-icon-theme
+sudo apt-get install -y lxappearance qt5ct qt6ct arc-theme adwaita-icon-theme papirus-icon-theme flameshot
 
 sudo apt-get remove -y vim-tiny && sudo ln -sf /usr/bin/vim /usr/bin/vi
 
@@ -88,6 +88,17 @@ cat > ~/.config/wal/config << 'EOF'
 [backend]
 backend = 'feh'
 options = '--bg-fill'
+EOF
+
+mkdir -p ~/.config/autostart
+cat > .config/autostart/Flameshot.desktop <<'EOF'
+[Desktop Entry]
+Name=flameshot
+Icon=flameshot
+Exec=flameshot
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
 EOF
 
 mkdir -p ~/Pictures/
