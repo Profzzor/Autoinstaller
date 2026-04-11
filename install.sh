@@ -8,8 +8,9 @@ sudo apt-get install -y meson ninja-build pkg-config x11proto-dev xorg-dev x11pr
 sudo apt-get install -y libdrm-dev libepoxy-dev x11proto-present-dev libxkbfile-dev libudev-dev libxshmfence-dev libbsd-dev x11proto-xf86dri-dev libgl1-mesa-dev libglu1-mesa-dev
 sudo apt-get install -y libgl-dev xutils-dev mesa-common-dev libgbm-dev libxcb-shape0-dev libxcb-util-dev libxcb-icccm4-dev autoconf automake libtool libinput-dev libx11-dev 
 sudo apt-get install -y cmake libxau-dev libxext-dev libxinerama-dev libxv-dev libxrender-dev libxdmcp-dev libxcb1-dev libxshmfence-dev libpixman-1-dev libbsd-dev xbitmaps 
-sudo apt-get install -y xkb-data libxfont-dev x11-xkb-utils mesa-utils libgl1-mesa-dri libgbm-dev open-vm-tools open-vm-tools-desktop fonts-font-awesome
+sudo apt-get install -y xkb-data libxfont-dev x11-xkb-utils mesa-utils libgl1-mesa-dri libgbm-dev open-vm-tools open-vm-tools-desktop fonts-font-awesome 
 sudo apt-get install -y git i3-wm i3blocks xinit xterm x11-xserver-utils vim alacritty libkrb5-dev python3-dev thunar python3-pip feh imagemagick picom rofi
+sudo apt-get install -y lxappearance arc-theme adwaita-icon-theme papirus-icon-theme
 
 sudo apt-get remove -y vim-tiny && sudo ln -sf /usr/bin/vim /usr/bin/vi
 
@@ -96,8 +97,6 @@ cp config/bashrc ~/.bashrc
 
 mkdir -p ~/.config/rofi
 cp config/config.rasi ~/.config/rofi/
-
-fc-cache -fv
 
 # Clean up
 cd /tmp && sudo rm -rf xf86-input-keyboard/ xf86-input-libinput/ xf86-input-vmmouse/ xserver/ i3blocks-contrib/
