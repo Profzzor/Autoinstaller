@@ -9,7 +9,7 @@ decorations = "Full"
 import = ["~/.cache/wal/colors-alacritty.toml"]
 
 [font]
-size = 13.0
+size = 11.0
 
 [scrolling]
 history = 10000
