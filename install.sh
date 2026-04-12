@@ -104,6 +104,14 @@ Type=Application
 X-GNOME-Autostart-enabled=true
 EOF
 
+sudo mkdir -p /etc/X11/xorg.conf.d/
+sudo cat > /etc/X11/xorg.conf.d/20-modesetting.conf <<'EOF'
+Section "Device"
+    Identifier "VMware Graphics"
+    Driver     "modesetting"
+EndSection
+EOF
+
 mkdir -p ~/Pictures/
 cp overgrown-green-staircase-forest.jpg ~/Pictures/
 
