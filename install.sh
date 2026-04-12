@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install -y meson ninja-build pkg-config x11proto-dev xorg-dev x11proto-randr-dev xtrans-dev libpixman-1-dev libxkbcommon-x11-dev libxfont-dev libxcvt-dev 
@@ -94,7 +92,7 @@ options = '--bg-fill'
 EOF
 
 mkdir -p ~/.config/autostart
-cat > .config/autostart/Flameshot.desktop <<'EOF'
+cat > ~/.config/autostart/Flameshot.desktop <<'EOF'
 [Desktop Entry]
 Name=flameshot
 Icon=flameshot
