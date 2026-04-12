@@ -1,7 +1,7 @@
 # Install
 
 ```bash
-sudo apt-get install git
+sudo apt-get -y install git
 
 git clone --depth 1 https://github.com/Profzzor/Autoinstaller.git && cd Autoinstaller.git
 
