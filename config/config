@@ -193,7 +193,6 @@ set_from_resource $bar_focus i3wm.color4 #5f87ff
 
 # Start i3bar to display a workspace bar (plus the system information i3blocks
 # finds out, if available)
-exec_always --no-startup-id xrandr --output Virtual-1 --auto
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id XDG_SESSION_TYPE=x11 ~/.local/bin/wal -R
 
@@ -230,6 +229,6 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 bindsym Print exec flameshot gui
-
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-fill "$(cat /home/z/.cache/wal/wal)"
 bindsym $mod+Shift+p exec systemctl poweroff
 bindsym $mod+Shift+Ctrl+p exec systemctl reboot
