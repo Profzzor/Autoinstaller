@@ -67,6 +67,7 @@ cat > ~/.xinitrc <<'EOF'
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
 export QT_QPA_PLATFORMTHEME=qt5ct
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+/usr/local/bin/vmware-resize-daemon &
 exec /usr/bin/i3
 EOF
 
@@ -102,11 +103,43 @@ Type=Application
 X-GNOME-Autostart-enabled=true
 EOF
 
+# Create the resize daemon
+sudo tee /usr/local/bin/vmware-resize-daemon <<'EOF'
+#!/bin/bash
+OUTPUT="Virtual-1"
+PREV=""
+
+while true; do
+    # Get current mode from DRM
+    MODE=$(cat /sys/class/drm/card0-Virtual-1/modes 2>/dev/null | head -n1)
+    
+    if [ -n "$MODE" ] && [ "$MODE" != "$PREV" ]; then
+        # Check if mode exists in xrandr
+        if xrandr | grep -q "$MODE"; then
+            xrandr --output "$OUTPUT" --mode "$MODE"
+        else
+            xrandr --output "$OUTPUT" --auto
+        fi
+        PREV="$MODE"
+    fi
+    sleep 1
+done
+EOF
+
+sudo chmod +x /usr/local/bin/vmware-resize-daemon
+
 sudo mkdir -p /etc/X11/xorg.conf.d/
-sudo cat > /etc/X11/xorg.conf.d/20-modesetting.conf <<'EOF'
+sudo tee /etc/X11/xorg.conf.d/20-modesetting.conf <<'EOF'
 Section "Device"
     Identifier "VMware Graphics"
     Driver     "modesetting"
+    Option     "AccelMethod" "glamor"
+EndSection
+
+Section "Module"
+    Load "glx"
+    Load "dri2"
+    Load "dri3"
 EndSection
 EOF
 
@@ -125,15 +158,5 @@ cp config/config.rasi ~/.config/rofi/
 cd /tmp && sudo rm -rf xf86-input-keyboard/ xf86-input-libinput/ xf86-input-vmmouse/ xserver/ i3blocks-contrib/
 
 sudo apt autoremove -y
-
-echo
-echo "===================================================="
-echo "AFTER REBOOT, RUN THIS COMMAND:"
-echo
-echo "XDG_SESSION_TYPE=x11 wal -i ~/Pictures/overgrown-green-staircase-forest.jpg"
-echo "===================================================="
-echo
-
-sleep 5
 
 sudo reboot
