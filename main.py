@@ -19,13 +19,13 @@ PACKAGE_MAP = {
         "manager": "apt",
         "packages": [
             "build-essential", "default-jdk", "golang", "curl", "git", "unzip", "gpg", "python3-dev",
-            "libevent-dev", "ncurses-dev", "automake", "bison", "pkg-config", "libssl-dev",
+            "libevent-dev", "libncurses-dev", "automake", "bison", "pkg-config", "libssl-dev",
             "p7zip-full", "ocl-icd-opencl-dev", "libgmp-dev", "libxxhash-dev", "libpcap-dev",
             "libssh2-1-dev", "libreadline-dev", "autoconf", "libptytty-dev", "docker.io",
             "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
-            "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "android-tools-adb", "binutils",
+            "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "adb", "binutils",
             "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby", "ruby-dev", "wireshark",
-            "tshark", "jq", "faketime", "mingw-w64", "gh", "net-snmp", "perl-image-exiftool",
+            "tshark", "jq", "faketime", "mingw-w64", "gh", "snmp", "libimage-exiftool-perl",
         ],
         "update_cmd": ["apt", "update"]
     },
