@@ -68,8 +68,8 @@ def install():
     a specific executable to determine if the tool is already installed.
     """
     print("\n--- Installing Python tools with 'uv tool' ---")
-    if not shutil.which('uv'):
-        print("ERROR: 'uv' command not found."); return
+    # if not shutil.which('uv'):
+        # print("ERROR: 'uv' command not found."); return
 
     for tool in UV_TOOLS:
         check_name = tool["check_name"]
