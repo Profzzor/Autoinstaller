@@ -25,7 +25,8 @@ PACKAGE_MAP = {
             "docker-compose", "default-mysql-server", "sqlite3", "php", "apache2", "gdb",
             "openvpn", "krb5-user", "libkrb5-dev", "wget", "vim", "adb", "binutils",
             "libx11-dev", "libxmu-dev", "libxext-dev", "ldap-utils", "ruby", "ruby-dev", "wireshark",
-            "tshark", "jq", "faketime", "mingw-w64", "gh", "snmp", "libimage-exiftool-perl",
+            "tshark", "jq", "faketime", "mingw-w64", "gh", "snmp", "libimage-exiftool-perl", "clang",
+            "libclang-dev", "llvm", "pkg-config"
         ],
         "update_cmd": ["apt", "update"]
     },
